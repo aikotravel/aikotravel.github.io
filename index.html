@@ -66,14 +66,6 @@ body{font-family:-apple-system,"Noto Sans TC","PingFang TC",sans-serif;backgroun
 .card-btn:hover{opacity:.88}
 .card-btn-na{background:#e2e8f0;color:#94a3b8;cursor:default}
 
-/* 分享文案 */
-.copy-section{max-width:1200px;margin:24px auto 0;padding:0 16px}
-.copy-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.copy-hdr span{font-size:16px;font-weight:800;color:#1a1a2e}
-.copy-btn{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;padding:8px 20px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;transition:opacity .2s}
-.copy-btn:hover{opacity:.85}
-.copy-body{background:#fff;border:1.5px solid #e2e8f0;border-radius:14px;padding:18px 20px;font-size:14px;line-height:1.9;color:#334155;white-space:pre-wrap;font-family:-apple-system,"Noto Sans TC","PingFang TC",sans-serif;cursor:text;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-
 /* Misc */
 .no-deals{text-align:center;padding:80px 20px;color:#94a3b8;font-size:16px}
 footer{text-align:center;padding:30px 20px 50px;color:#94a3b8;font-size:12px;line-height:2}
@@ -92,41 +84,13 @@ footer strong{color:#475569}
 
 <div class="hero">
   <span class="hero-emoji">✈️</span>
-  <div class="hero-date">📅 2026 年 06 月 22 日（星期一）更新於 15:34</div>
+  <div class="hero-date">📅 2026 年 06 月 22 日（星期一）更新於 15:42</div>
   <h1>今日旅遊<span>特惠精選</span></h1>
   <p class="hero-sub">跟著愛可出發，最便宜的行程都在這！</p>
   
   <div class="hero-stats">共整理 32 筆優惠 · 資料來源：KKday ｜ 雄獅旅遊 ｜ 易遊網</div>
 </div>
 
-<section class="copy-section">
-  <div class="copy-hdr">
-    <span>📋 今日分享文案</span>
-    <button class="copy-btn" onclick="copyCopyText()">一鍵複製</button>
-  </div>
-  <pre class="copy-body" id="copyBody">✈️ 愛可愛生活｜今日旅遊特惠精選 2026/06/22
-
-🎫 KKday 景點門票特惠
-・日本環球影城門票 Universal Stu　NT$1,764起
-・Skyliner京成電鐵車票　NT$505起
-・日本環球影城門票 & 快速通關券 USJ　NT$629起
-・關西機場特快 HARUKA 車票　NT$256起
-
-🦁 雄獅旅遊精選行程
-・嘉義二日｜618第二人半價＆免小費｜阿里山風　NT$2,800起
-・免小費｜東京迪士尼.鎌倉小町通.新倉富士淺間　NT$28,888起
-・新北旅遊｜免小費｜福爾摩沙北海岸藝術季.自然　NT$999起
-・新北旅遊｜免小費｜福爾摩沙北海岸藝術季.深度　NT$699起
-
-✈️ 易遊網機加酒自由行
-・台北-東京機加酒　NT$16,405起
-・台北-大阪機加酒　NT$15,679起
-・台北-沖繩(那霸)機加酒　NT$15,569起
-・台北-福岡機加酒　NT$13,730起
-
-👇 完整連結與更多優惠請看上方頁面！
-跟著愛可出發，省更多！💕</pre>
-</section>
 <section class="section">
   <div class="sec-hdr">
     <span class="sec-icon">🎫</span>
@@ -828,31 +792,11 @@ footer strong{color:#475569}
 
 <footer>
   <strong>愛可推薦</strong> 每日早上 9:00 自動整理<br>
-  以上價格僅供參考，實際以各平台官網為準 · 2026/06/22 15:34 更新
+  以上價格僅供參考，實際以各平台官網為準 · 2026/06/22 15:42 更新
 </footer>
 <div class="toast" id="toast"></div>
 
 <script>
-function copyCopyText() {
-  const text = document.getElementById('copyBody').innerText;
-  const t = document.getElementById('toast');
-  const show = (msg) => {
-    t.textContent = msg;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 2400);
-  };
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(text).then(() => show('✅ 文案已複製！貼到群組就可以用囉'));
-  } else {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    show('✅ 文案已複製！');
-  }
-}
 function copyCode(e, code) {
   e.stopPropagation();
   const t = document.getElementById('toast');
