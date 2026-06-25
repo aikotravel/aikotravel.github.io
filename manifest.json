@@ -1,0 +1,15 @@
+{
+  "name": "愛可推薦｜每日旅遊特惠",
+  "short_name": "愛可推薦",
+  "description": "跟著愛可出發，最便宜的行程都在這！",
+  "start_url": "/aiko-deals/",
+  "scope": "/aiko-deals/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fdf6ee",
+  "theme_color": "#9a4a20",
+  "icons": [
+    { "src": "/aiko-deals/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/aiko-deals/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
