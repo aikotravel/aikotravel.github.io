@@ -258,17 +258,27 @@
 body{font-family:-apple-system,"Noto Sans TC","PingFang TC",sans-serif;background:#fdf6ee;color:#3d2010;min-height:100vh}
 
 /* Hero */
-.hero{background:linear-gradient(135deg,#7a3b1e,#b06030,#c87840);color:#fff;padding:40px 20px 48px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(255,180,80,.15),transparent 50%),radial-gradient(circle at 80% 20%,rgba(255,220,120,.1),transparent 50%)}
+.hero{background:linear-gradient(135deg,#6a2e10 0%,#a05020 45%,#c87840 100%);color:#fff;padding:36px 20px 0;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 85%,rgba(255,160,60,.2),transparent 45%),radial-gradient(circle at 85% 15%,rgba(255,220,80,.12),transparent 45%),radial-gradient(circle at 50% 50%,rgba(0,0,0,.08),transparent 70%)}
+.hero::after{content:'✈️🗼🎡🌸🏝️⛩️';position:absolute;top:0;left:0;width:100%;height:100%;font-size:80px;opacity:.04;letter-spacing:60px;white-space:nowrap;overflow:hidden;pointer-events:none}
 .hero>*{position:relative}
-.hero-emoji{font-size:52px;display:block;margin-bottom:12px}
-.hero-date{font-size:13px;color:rgba(255,235,200,.6);margin-bottom:8px;letter-spacing:.8px}
-.hero h1{font-size:clamp(26px,7vw,42px);font-weight:900;line-height:1.15;margin-bottom:10px}
+.hero-badge{display:inline-block;background:rgba(255,200,0,.25);border:1px solid rgba(255,220,100,.4);border-radius:30px;padding:4px 16px;font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:14px;color:#ffd970}
+.hero h1{font-size:clamp(24px,6.5vw,40px);font-weight:900;line-height:1.2;margin-bottom:8px}
 .hero h1 span{color:#f5c87a}
-.hero-sub{font-size:15px;color:rgba(255,235,200,.8);margin-bottom:28px}
-.hero-codes{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.hero-sub{font-size:14px;color:rgba(255,235,200,.75);margin-bottom:22px}
+.hero-highlight{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+.hero-pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,220,160,.25);border-radius:20px;padding:6px 16px;font-size:13px;font-weight:600;color:#fff}
+.hero-pill strong{color:#ffd970}
+.hero-codes{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:0}
 .hero-code{background:rgba(255,255,255,.12);border:1px solid rgba(255,220,160,.3);border-radius:14px;padding:12px 20px;min-width:130px;cursor:pointer;transition:background .15s}
 .hero-code:hover{background:rgba(255,255,255,.2)}
+/* Filter Bar */
+.filter-bar{background:#fff;border-bottom:1px solid #f0e0cc;padding:0 16px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(120,60,20,.06)}
+.filter-inner{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;max-width:900px;margin:0 auto}
+.filter-inner::-webkit-scrollbar{display:none}
+.filter-tab{flex-shrink:0;padding:14px 16px;font-size:14px;font-weight:600;color:#8a6040;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:color .15s,border-color .15s;user-select:none}
+.filter-tab:hover{color:#b06030}
+.filter-tab.active{color:#b06030;border-bottom-color:#b06030}
 .hc-src{font-size:11px;font-weight:700;margin-bottom:4px;letter-spacing:.5px;color:rgba(255,220,160,.8)}
 .hc-val{font-size:20px;font-weight:900;color:#f5c87a;letter-spacing:1.5px}
 .hc-hint{font-size:10px;color:rgba(255,220,160,.45);margin-top:3px}
@@ -333,10 +343,29 @@ footer strong{color:#8a5830}
 <body>
 
 <div class="hero">
-  <span class="hero-emoji">✈️</span>
-  <h1>今日旅遊<span>特惠精選</span></h1>
-  <p class="hero-sub">跟著愛可出發，最便宜的行程都在這！</p>
+  <div class="hero-badge">✨ 每日早上 9:00 自動更新</div>
+  <h1>旅遊特惠<span>每日精選</span></h1>
+  <p class="hero-sub">KKday・雄獅旅遊・易遊網 · 共 75 筆優惠</p>
+  <div class="hero-highlight">
+    <div class="hero-pill">🗼 日本行程 <strong>88折起</strong></div>
+    <div class="hero-pill">🇰🇷 韓國 <strong>買一送一</strong></div>
+    <div class="hero-pill">✈️ 機票 <strong>最高5折</strong></div>
+    <div class="hero-pill">🏖️ 東南亞 <strong>銅板價</strong></div>
+  </div>
   
+</div>
+
+<div class="filter-bar">
+  <div class="filter-inner">
+    <div class="filter-tab active" data-filter="全部">全部 75</div>
+    <div class="filter-tab" data-filter="日本">🗼 日本</div>
+    <div class="filter-tab" data-filter="韓國">🇰🇷 韓國</div>
+    <div class="filter-tab" data-filter="東南亞">🏖️ 東南亞</div>
+    <div class="filter-tab" data-filter="歐洲">🚂 歐洲</div>
+    <div class="filter-tab" data-filter="台灣">🏝️ 台灣</div>
+    <div class="filter-tab" data-filter="機票">✈️ 機票</div>
+    <div class="filter-tab" data-filter="閃購">🔥 閃購</div>
+  </div>
 </div>
 
 <section class="section">
@@ -346,7 +375,7 @@ footer strong{color:#8a5830}
     <span class="sec-count">54 筆優惠</span>
   </div>
   <div class="cards-grid">
-  <div class="deal-card">
+  <div class="deal-card" data-cat="閃購">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">⛩️</div>
     <div class="card-body">
@@ -373,7 +402,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/287665?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="閃購">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0580w12000som6dqsD611_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -395,7 +424,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/2358?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="閃購">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">🌍</div>
     <div class="card-body">
@@ -417,7 +446,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/579222?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="東南亞">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">🍜</div>
     <div class="card-body">
@@ -444,7 +473,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/100556?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="韓國">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0580w12000som6dqsD611_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -471,7 +500,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/140195?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">⛩️</div>
     <div class="card-body">
@@ -493,7 +522,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/183518?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="東南亞">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">🍜</div>
     <div class="card-body">
@@ -520,7 +549,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/165860?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -547,7 +576,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/148912?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -574,7 +603,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/533691?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -601,7 +630,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/25439?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">⛩️</div>
     <div class="card-body">
@@ -628,7 +657,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/251019?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="閃購">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">🌍</div>
     <div class="card-body">
@@ -655,7 +684,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/262496?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="閃購">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">🌍</div>
     <div class="card-body">
@@ -682,7 +711,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/124159?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="韓國">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0580w12000som6dqsD611_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -709,7 +738,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/138477?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="機票">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0220h12000lj06m5s9364_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -736,7 +765,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/154601?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="機票">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0580w12000som6dqsD611_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -763,7 +792,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/154003?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="機票">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">🦁</div>
     <div class="card-body">
@@ -790,7 +819,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/158429?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/1mc0w12000me0dxct2E7F_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -817,7 +846,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/183846?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -844,7 +873,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/591145?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -871,7 +900,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/593949?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -898,7 +927,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/593947?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">⛩️</div>
     <div class="card-body">
@@ -925,7 +954,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/593890?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">⛩️</div>
     <div class="card-body">
@@ -952,7 +981,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/594086?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/1mc0w12000me0dxct2E7F_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -979,7 +1008,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/593948?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1006,7 +1035,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/573379?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="韓國">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0580w12000som6dqsD611_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1033,7 +1062,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/593867?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="韓國">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0580w12000som6dqsD611_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1060,7 +1089,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/594303?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="韓國">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0580w12000som6dqsD611_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1087,7 +1116,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/267164?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="韓國">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0580w12000som6dqsD611_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1114,7 +1143,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/166887?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="韓國">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0580w12000som6dqsD611_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1141,7 +1170,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/405255?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="韓國">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0580w12000som6dqsD611_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1168,7 +1197,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/259477?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="韓國">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0580w12000som6dqsD611_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1195,7 +1224,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/583192?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="東南亞">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/20030s000000hzn0n9310_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1222,7 +1251,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/569732?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1249,7 +1278,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/142533?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0220h12000lj06m5s9364_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1276,7 +1305,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/159391?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0220h12000lj06m5s9364_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1303,7 +1332,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/527376?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0220h12000lj06m5s9364_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1330,7 +1359,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/181495?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/1mc0w12000me0dxct2E7F_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1357,7 +1386,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/528208?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1384,7 +1413,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/165534?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1411,7 +1440,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/604945?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1438,7 +1467,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/601695?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="台灣">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">🌍</div>
     <div class="card-body">
@@ -1465,7 +1494,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/549777?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="台灣">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">🌍</div>
     <div class="card-body">
@@ -1492,7 +1521,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/535777?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="台灣">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">🌍</div>
     <div class="card-body">
@@ -1519,7 +1548,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/580003?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="台灣">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">🌍</div>
     <div class="card-body">
@@ -1546,7 +1575,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/580222?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/1mc0w12000me0dxct2E7F_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1568,7 +1597,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/18940?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1590,7 +1619,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/7913?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/1mc0w12000me0dxct2E7F_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1612,7 +1641,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/12156?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1634,7 +1663,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/6681?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/1mc0w12000me0dxct2E7F_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1656,7 +1685,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/20310?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="歐洲">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">🌍</div>
     <div class="card-body">
@@ -1683,7 +1712,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/2524?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="歐洲">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img card-img-ph">🌍</div>
     <div class="card-body">
@@ -1710,7 +1739,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/128031?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="歐洲">
     <div class="badge">省15%</div>
     <div class="card-img"><img src="https://image.kkday.com/v2/image/get/s1.kkday.com/product_119917/20260618053120_XsqpR/png" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1732,7 +1761,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://www.kkday.com/zh-tw/product/119917?cid=2299" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="機票">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0221712000oahl31u544A_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1762,7 +1791,7 @@ footer strong{color:#8a5830}
     <span class="sec-count">12 筆優惠</span>
   </div>
   <div class="cards-grid">
-  <div class="deal-card">
+  <div class="deal-card" data-cat="台灣">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://static.liontech.com.tw/cmspic/PIC2503-001497/M_PIC2503-001497.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1784,7 +1813,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://travel.liontravel.com/detail?NormGroupID=4dd4c408-f0f0-43e2-8b23-039bf4cf1c9a&Origin=LION&Origin=UNI&Platform=APP&GroupID=26JT901TR6-ZP&mtld=00001385&mtl=lionaff&utm_source=lionaffiliate&utm_medium=cpa" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="其他">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://static.liontech.com.tw/cmspic/PIC2507-000720/M_PIC2507-000720.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1806,7 +1835,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://travel.liontravel.com/detail?NormGroupID=81dba1e5-4c9e-4c3c-89c4-2669b61722b1&Origin=LION&Origin=UNI&Platform=APP&GroupID=26JT901TR6-ZP&mtld=00001385&mtl=lionaff&utm_source=lionaffiliate&utm_medium=cpa" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="其他">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://static.liontech.com.tw/cmspic/PIC2409-001899/M_PIC2409-001899.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1828,7 +1857,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://travel.liontravel.com/detail?NormGroupID=5c3f01bd-0d43-41a6-bcbd-999a015da2af&Origin=LION&Origin=UNI&Platform=APP&GroupID=26JT901TR6-ZP&mtld=00001385&mtl=lionaff&utm_source=lionaffiliate&utm_medium=cpa" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="其他">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://static.liontech.com.tw/cmspic/PIC2503-000327/M_PIC2503-000327.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1850,7 +1879,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://travel.liontravel.com/detail?NormGroupID=6ef9ed9c-5e5a-4467-a40d-3ebbb151a343&Origin=LION&Origin=UNI&Platform=APP&GroupID=26JT901TR6-ZP&mtld=00001385&mtl=lionaff&utm_source=lionaffiliate&utm_medium=cpa" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="其他">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://static.liontech.com.tw/cmspic/PIC1605-012506/M_PIC1605-012506.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1872,7 +1901,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://travel.liontravel.com/detail?NormGroupID=2c61d8db-134d-44ba-ad89-094aff38cdd6&Origin=LION&Origin=UNI&Platform=APP&GroupID=26JT901TR6-ZP&mtld=00001385&mtl=lionaff&utm_source=lionaffiliate&utm_medium=cpa" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="其他">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://static.liontech.com.tw/cmspic/PIC2305-002626/M_PIC2305-002626.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1894,7 +1923,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://travel.liontravel.com/detail?NormGroupID=a7614d8d-a36a-45ce-a0bf-5d9f844a10e5&Origin=LION&Origin=UNI&Platform=APP&GroupID=26JT901TR6-ZP&mtld=00001385&mtl=lionaff&utm_source=lionaffiliate&utm_medium=cpa" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="其他">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://static.liontech.com.tw/cmspic/PIC1906-012448/M_PIC1906-012448.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1916,7 +1945,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://travel.liontravel.com/detail?NormGroupID=8fb44d20-e173-4f53-a96e-437b7516a68a&Origin=LION&Origin=UNI&Platform=APP&GroupID=26JT901TR6-ZP&mtld=00001385&mtl=lionaff&utm_source=lionaffiliate&utm_medium=cpa" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="其他">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://static.liontech.com.tw/cmspic/PIC2003-004561/M_PIC2003-004561.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1938,7 +1967,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://travel.liontravel.com/detail?NormGroupID=c9ee2086-bd74-40b7-8bee-25b5611544a4&Origin=LION&Origin=UNI&Platform=APP&GroupID=26JT901TR6-ZP&mtld=00001385&mtl=lionaff&utm_source=lionaffiliate&utm_medium=cpa" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="其他">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://static.liontech.com.tw/cmspic/PIC2404-000904/M_PIC2404-000904.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1960,7 +1989,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://travel.liontravel.com/detail?NormGroupID=42dfbda4-226e-4d33-b3dc-8dcec24756f9&Origin=LION&Origin=UNI&Platform=APP&GroupID=26JT901TR6-ZP&mtld=00001385&mtl=lionaff&utm_source=lionaffiliate&utm_medium=cpa" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://static.liontech.com.tw/cmspic/PIC2503-000056/M_PIC2503-000056.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -1982,7 +2011,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://travel.liontravel.com/detail?NormGroupID=7b8e7cd1-ebc7-4991-9b5c-de8202097e4e&Origin=LION&Origin=UNI&Platform=APP&GroupID=26JT901TR6-ZP&mtld=00001385&mtl=lionaff&utm_source=lionaffiliate&utm_medium=cpa" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="台灣">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://static.liontech.com.tw/cmspic/PIC2207-000921/M_PIC2207-000921.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2004,7 +2033,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://travel.liontravel.com/detail?NormGroupID=735850d8-651c-47f3-a9ab-95c0977fb340&Origin=LION&Origin=UNI&Platform=APP&GroupID=26JT901TR6-ZP&mtld=00001385&mtl=lionaff&utm_source=lionaffiliate&utm_medium=cpa" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="其他">
     <div class="badge code-badge">優惠連結</div>
     <div class="card-img"><img src="https://static.liontech.com.tw/cmspic/PIC2009-003251/M_PIC2009-003251.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2034,7 +2063,7 @@ footer strong{color:#8a5830}
     <span class="sec-count">9 筆優惠</span>
   </div>
   <div class="cards-grid">
-  <div class="deal-card">
+  <div class="deal-card" data-cat="東南亞">
     
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/1mc2w12000em9x3802E43_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2056,7 +2085,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://eztravel.tw/98kz7j" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="機票">
     
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0586912000sqcig1c0646_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2078,7 +2107,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://eztravel.tw/96k5bm" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="其他">
     
     <div class="card-img"><img src="https://image.cdn-eztravel.com.tw/0Q1D91IxHP8p76PQaXXan7e_V0UTBuc463Ak7eWPUDM/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2hwL2Jhbm5lci8zNTZ4MTMwLzM1NngxMzBfMjAyNTA5MDlMSmFsbDkucG5n.png" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2100,7 +2129,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://eztravel.tw/98kz6v" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="韓國">
     
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0580w12000som6dqsD611_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2122,7 +2151,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://eztravel.tw/98kz84" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="東南亞">
     
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/20030s000000hzn0n9310_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2144,7 +2173,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://eztravel.tw/98kz8e" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     
     <div class="card-img"><img src="https://image.cdn-eztravel.com.tw/GXmJ6i8eFsnsLG6idetfvXdt8F9na4WMHQOoEgH10u4/rs:fill:500:390:1/g:ce/q:100/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2V2ZW50cy9haXJ0aWNrZXQvZmVlZC9UWU9fNjAweDYwMC5wbmc.png" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2166,7 +2195,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://eztravel.tw/98kz94" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     
     <div class="card-img"><img src="https://image.cdn-eztravel.com.tw/NSpq3DVJZ7x4es2VT_GIrxpQ4q41ihJngKgp_1_Fy0I/rs:fill:500:390:1/g:ce/q:100/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2V2ZW50cy9haXJ0aWNrZXQvZmVlZC9PS0FfNjAweDYwMC5wbmc.png" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2188,7 +2217,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://eztravel.tw/98kz9j" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     
     <div class="card-img"><img src="https://image.cdn-eztravel.com.tw/c6ukbIj3kGGSIeSjsUqP4GPB_4wPALJtcB6pqT0kaG8/rs:fill:500:390:1/g:ce/q:100/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2V2ZW50cy9haXJ0aWNrZXQvZmVlZC9PU0FfNjAweDYwMC5wbmc.png" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2210,7 +2239,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://eztravel.tw/98kys3" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="日本">
     
     <div class="card-img"><img src="https://image.cdn-eztravel.com.tw/Zri2YteDMF53CkXoBrNGePhneZgx86f3s_qg6F7yjgc/rs:fill:500:390:1/g:ce/q:100/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2V2ZW50cy9haXJ0aWNrZXQvZmVlZC9GVUtfNjAweDYwMC5wbmc.png" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2240,7 +2269,7 @@ footer strong{color:#8a5830}
     <span class="sec-count">5 筆優惠</span>
   </div>
   <div class="cards-grid">
-  <div class="deal-card">
+  <div class="deal-card" data-cat="台灣">
     
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0584q12000soiou635737_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2262,7 +2291,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://hotel.eztravel.com.tw/detail?CityID=3847&HotelID=133206303" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="台灣">
     
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0583g12000sm8bbs69F84_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2284,7 +2313,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://hotel.eztravel.com.tw/detail?CityID=7811&HotelID=105469356" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="台灣">
     
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0222y12000ly4qkbv7C3C_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2306,7 +2335,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://hotel.eztravel.com.tw/detail?CityID=7524&HotelID=840834" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="台灣">
     
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0204l12000a5cf3pqD3D0_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2328,7 +2357,7 @@ footer strong{color:#8a5830}
       <a class="card-btn" href="https://hotel.eztravel.com.tw/detail?CityID=3849&HotelID=890668" target="_blank" rel="noopener">前往購買 →</a>
     </div>
   </div>
-  <div class="deal-card">
+  <div class="deal-card" data-cat="台灣">
     
     <div class="card-img"><img src="https://img1.cdn-eztravel.com.tw/images/0583412000snq29ww784D_C_600_400_R5_Q80.jpg" loading="lazy" alt=""></div>
     <div class="card-body">
@@ -2356,7 +2385,7 @@ footer strong{color:#8a5830}
 
 <footer>
   <strong>愛可推薦</strong> 每日早上 9:00 自動整理<br>
-  以上價格僅供參考，實際以各平台官網為準 · 2026/06/29 10:06 更新
+  以上價格僅供參考，實際以各平台官網為準 · 2026/06/29 10:09 更新
 </footer>
 <div class="toast" id="toast"></div>
 
@@ -2381,6 +2410,23 @@ function copyCode(e, code) {
     show('✅ 已複製折扣碼：' + code);
   }
 }
+</script>
+<script>
+// 分類篩選
+document.querySelectorAll('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const f = tab.dataset.filter;
+    document.querySelectorAll('.deal-card').forEach(card => {
+      card.style.display = (f === '全部' || card.dataset.cat === f) ? '' : 'none';
+    });
+    document.querySelectorAll('.section').forEach(sec => {
+      const visible = sec.querySelectorAll('.deal-card:not([style*="none"])').length;
+      sec.style.display = visible ? '' : 'none';
+    });
+  });
+});
 </script>
 <script>
 if ('serviceWorker' in navigator) {
