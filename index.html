@@ -460,6 +460,27 @@ footer strong{color:#8a5830}
 .article-card-icon{font-size:26px}
 .article-card-title{font-size:13px;font-weight:700;color:#3d2010;line-height:1.45}
 .article-card-tag{font-size:11px;color:#b08060;font-weight:600}
+
+/* ── 3段式卡片 ── */
+.card-3row{background:#fffaf4;border-radius:8px;padding:8px 10px;margin:6px 0 8px;border:1px solid #f0e2c8}
+.c3-item{display:flex;align-items:flex-start;gap:5px;margin-bottom:4px}
+.c3-item:last-child{margin-bottom:0}
+.c3-icon{font-size:11px;line-height:1.65;flex-shrink:0}
+.c3-txt{font-size:11.5px;color:#6a4020;line-height:1.55}
+/* ── 比較表 ── */
+.compare-section{max-width:960px;margin:32px auto 0;padding:0 16px}
+.compare-intro{font-size:13px;color:#9a6040;margin-bottom:14px}
+.compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.compare-table{width:100%;border-collapse:collapse;font-size:13px;min-width:520px}
+.compare-table th{background:#f5e8d5;color:#7a4020;padding:10px 14px;text-align:left;border-bottom:2px solid #e8c890;white-space:nowrap}
+.compare-table td{padding:10px 14px;border-bottom:1px solid #f0e0cc;vertical-align:top;line-height:1.5}
+.compare-table tr:nth-child(even) td{background:#fffaf5}
+.compare-table tr:hover td{background:#fff3e4}
+.plat-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;margin-top:3px}
+.kkday-tag{background:#e8f4e8;color:#2a7a2a}
+.lion-tag{background:#fff0e0;color:#c06020}
+.ez-tag{background:#e0eeff;color:#1a5cb0}
+.compare-tip{font-size:12px;color:#b08060;margin-top:10px;padding:8px 12px;background:#fffaf4;border-radius:8px;border-left:3px solid #d0884a}
 </style>
 </head>
 <body>
@@ -511,6 +532,45 @@ footer strong{color:#8a5830}
     <div class="tag-pill" data-tag="住宿">🏨 住宿</div>
   </div>
 </div>
+
+<section class="compare-section">
+  <div class="sec-hdr">
+    <span class="sec-icon">⚖️</span>
+    <h2 class="sec-title">三大平台怎麼選？</h2>
+  </div>
+  <p class="compare-intro">搞清楚哪個平台最適合你的行程，再點連結比較今日價格</p>
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr><th>平台</th><th>最強項目</th><th>特色優勢</th><th>缺點</th><th>最適合</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>KKday</strong><br><span class="plat-tag kkday-tag">景點票券</span></td>
+          <td>景點門票、體驗行程、eSIM、JR Pass</td>
+          <td>即買即用電子票；百萬真實評價；多數可免費取消</td>
+          <td>機票/住宿選項少</td>
+          <td>自由行散客、想買景點票</td>
+        </tr>
+        <tr>
+          <td><strong>雄獅旅遊</strong><br><span class="plat-tag lion-tag">機加酒套裝</span></td>
+          <td>完整行程套裝、機加酒組合</td>
+          <td>台灣最大旅行社；中文客服與當地導遊；售後有保障</td>
+          <td>彈性低；部分行程含購物站</td>
+          <td>首次出國、親子、不想自己規劃</td>
+        </tr>
+        <tr>
+          <td><strong>易遊網</strong><br><span class="plat-tag ez-tag">機票比價</span></td>
+          <td>機票比價、飯店預訂</td>
+          <td>機票選擇豐富；彈性自組機+酒；介面直覺</td>
+          <td>體驗行程選項少</td>
+          <td>想自己搭配機票＋住宿者</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="compare-tip">💡 最聰明的做法：用 KKday 買景點票、用易遊網比機票、用雄獅訂套裝，三個平台分工合作</p>
+</section>
 
 <section class="articles-section">
   <h2>旅遊攻略文章</h2>
@@ -573,7 +633,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#9B59B6">🏨 易遊網飯店</div>
       <h3 class="card-title">福爾摩沙花園酒店｜2026台南新飯店</h3>
       <p class="card-subtitle">限時85折・暑假$2,550起</p>
-      <p class="card-reason">💡 精選住宿，含早餐或設施超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">精選住宿，含早餐或設施超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$1,800</span>
@@ -596,7 +660,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【罕見85折+贈eSIM】歐洲鐵路全境通行證 Eurail Global Pass</h3>
       
-      <p class="card-reason">💡 現省 15%，高 CP 值精選行程</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">現省 15%，高 CP 值精選行程</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         <span class="orig-price">NT$10,236</span>
         <span class="deal-price">NT$8,680</span>
@@ -619,7 +687,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【限7/8出發】樂桃航空東京5天計劃機票｜含托運行李</h3>
       
-      <p class="card-reason">💡 機票特惠，建議搭行程一起訂更省</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">機票特惠，建議搭行程一起訂更省</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$9,000</span>
@@ -642,7 +714,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">限量免小費~廣島旅遊｜世界遺產嚴島神社.出雲大社.松江城.岡山後樂園.倉敷美觀地</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$38,999</span>
@@ -665,7 +741,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">限量促銷免小費.東北旅遊|秘境五色沼.銀山溫泉街.角館武家屋敷.郭公糰子.山形熊</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$33,999</span>
@@ -696,7 +776,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🍁【月底閃購】京都祕境一日遊｜勝尾寺・愛宕念佛寺・嵐山竹林</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -724,7 +808,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🎭【月底閃購買一送一】首爾 NANTA 亂打秀</h3>
       
-      <p class="card-reason">💡 買一送一方案，兩人同行更超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">買一送一方案，兩人同行更超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -747,7 +835,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">👻【月底閃購買一送一】伊藤潤二展｜恐怖漫畫大師特展</h3>
       
-      <p class="card-reason">💡 買一送一方案，兩人同行更超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">買一送一方案，兩人同行更超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$480</span>
@@ -770,7 +862,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🏖️【5折狂歡】富國島太陽世界水上樂園門票</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -798,7 +894,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🧱【買一送一】韓國樂高樂園門票</h3>
       
-      <p class="card-reason">💡 買一送一方案，兩人同行更超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">買一送一方案，兩人同行更超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -826,7 +926,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🏮【買一送一】京都東福寺 ZEN NIGHT 高級夜間觀賞門票</h3>
       
-      <p class="card-reason">💡 買一送一方案，兩人同行更超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">買一送一方案，兩人同行更超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$554</span>
@@ -849,7 +953,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🇻🇳【買一送一 $163/人】西貢早晨城市之旅一日遊</h3>
       
-      <p class="card-reason">💡 買一送一方案，兩人同行更超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">買一送一方案，兩人同行更超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$163</span>
@@ -877,7 +985,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🗻【5折優惠 $965/人】富士山五合目・河口湖・忍野八海一日遊</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$965</span>
@@ -905,7 +1017,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🌸【買一送一 $1,040/人】茨城常陸海濱公園花海・大洗鳥居一日遊</h3>
       
-      <p class="card-reason">💡 買一送一方案，兩人同行更超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">買一送一方案，兩人同行更超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$1,040</span>
@@ -933,7 +1049,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🌊【買一送一 $643/人】日本天橋立一日遊</h3>
       
-      <p class="card-reason">💡 買一送一方案，兩人同行更超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">買一送一方案，兩人同行更超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$643</span>
@@ -961,7 +1081,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">⛩️【買一送一 $1,027/人】京都一日遊｜貴船神社・嵐山・三千院</h3>
       
-      <p class="card-reason">💡 買一送一方案，兩人同行更超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">買一送一方案，兩人同行更超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$1,027</span>
@@ -989,7 +1113,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🍲【21:00閃購5折】海底撈火鍋抵用券</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$500</span>
@@ -1017,7 +1145,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🌶️【21:00閃購5折】鼎王麻辣鍋餐券</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$2,169</span>
@@ -1045,7 +1177,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🇰🇷【5折優惠】釜山通行證 Visit Busan Pass</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$886</span>
@@ -1073,7 +1209,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">✈️【機票5折】亞洲航空 沖繩4天計劃機票</h3>
       
-      <p class="card-reason">💡 機票特惠，建議搭行程一起訂更省</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">機票特惠，建議搭行程一起訂更省</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -1101,7 +1241,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">✈️【機票5折】酷航 首爾計劃機票｜含托運行李</h3>
       
-      <p class="card-reason">💡 機票特惠，建議搭行程一起訂更省</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">機票特惠，建議搭行程一起訂更省</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$6,899</span>
@@ -1129,7 +1273,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">✈️【機票5折】酷航 新加坡計劃機票</h3>
       
-      <p class="card-reason">💡 機票特惠，建議搭行程一起訂更省</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">機票特惠，建議搭行程一起訂更省</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$7,888</span>
@@ -1157,7 +1305,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">🏨【機加酒】大阪4日機加酒｜暑假限定</h3>
       
-      <p class="card-reason">💡 機票＋飯店一次搞定，省時省力</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">機票＋飯店一次搞定，省時省力</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$10,799</span>
@@ -1185,7 +1337,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【經典打卡首選】富士山一日遊</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$992</span>
@@ -1213,7 +1369,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【雙湖無敵全景】富士山雙湖全景一日遊</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$1,021</span>
@@ -1241,7 +1401,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【網美花海必拍】富士山賞花絕景一天團</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$1,098</span>
@@ -1269,7 +1433,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【夢幻海線雙拼】京都天橋立・伊根舟屋一日遊</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$1,070</span>
@@ -1297,7 +1465,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【秘境合掌村】京都天橋立・美山茅草屋一日遊</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$1,119</span>
@@ -1325,7 +1497,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【親子放電神行程】淡路島賞花親親樹熊一天團</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$1,093</span>
@@ -1353,7 +1529,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">日本京都奈良一日遊</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$923</span>
@@ -1381,7 +1561,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【買一送一】韓國秋日限定賞楓一日遊</h3>
       
-      <p class="card-reason">💡 買一送一方案，兩人同行更超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">買一送一方案，兩人同行更超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$1,055</span>
@@ -1409,7 +1593,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【買一送一】韓國紅葉秘境一日遊</h3>
       
-      <p class="card-reason">💡 買一送一方案，兩人同行更超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">買一送一方案，兩人同行更超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$1,459</span>
@@ -1437,7 +1625,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">首爾個人色彩鑑定｜K-Beauty 88折</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$2,886</span>
@@ -1465,7 +1657,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">首爾 Ye-Lead 高級美髮沙龍｜K-Beauty 88折</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -1493,7 +1689,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">韓國 K-POP 偶像畫報拍攝體驗｜K-Beauty 88折</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$2,089</span>
@@ -1521,7 +1721,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">景福宮韓服妝容體驗｜K-Beauty 88折</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -1549,7 +1753,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【買一送一 $355/人】首爾美食一日遊｜含韓服+海鮮放題</h3>
       
-      <p class="card-reason">💡 買一送一方案，兩人同行更超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">買一送一方案，兩人同行更超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$355</span>
@@ -1577,7 +1785,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【兩天一夜 $710/人】惠州五星飯店純玩團</h3>
       
-      <p class="card-reason">💡 精選住宿，含早餐或設施超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">精選住宿，含早餐或設施超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$710</span>
@@ -1605,7 +1817,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【5折神券】橫濱港未來萬葉俱樂部門票</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -1633,7 +1849,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">沖繩 Fun Pass 超值系列</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -1661,7 +1881,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">沖繩 DMM Kariyushi 水族館門票</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$360</span>
@@ -1689,7 +1913,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">Churasun 6 沖繩表演觀賞門票</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$1,286</span>
@@ -1717,7 +1945,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">豪華版關西樂享周遊券｜含USJ特權入場</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$3,087</span>
@@ -1745,7 +1977,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">麗星郵輪 探索星號 Star Navigator</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$7,520</span>
@@ -1773,7 +2009,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【長岡煙火節】新宿出發含指定座位一日遊</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$13,656</span>
@@ -1801,7 +2041,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【長岡花火大會】名古屋出發專屬觀賞席一日遊</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$13,656</span>
@@ -1829,7 +2073,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">台北 XR 沉浸玩家｜消失的法老古夫金字塔VR體驗</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$375</span>
@@ -1857,7 +2105,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">埃及木乃伊 - 永生傳說特展</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$480</span>
@@ -1885,7 +2137,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">櫻桃小丸子原作 40 週年特展</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$470</span>
@@ -1913,7 +2169,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">A World of Wonder 奇想世界特展</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$480</span>
@@ -1941,7 +2201,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">JR HARUKA 關西機場快線｜贈7天21GB eSIM</h3>
       
-      <p class="card-reason">💡 免換卡免設定，落地直接用</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">免換卡免設定，落地直接用</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$257</span>
@@ -1964,7 +2228,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">京成電鐵 Skyliner 成田機場快線｜贈7天21GB eSIM</h3>
       
-      <p class="card-reason">💡 免換卡免設定，落地直接用</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">免換卡免設定，落地直接用</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -1987,7 +2255,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">大阪周遊卡一日券・二日券｜贈7天21GB eSIM</h3>
       
-      <p class="card-reason">💡 免換卡免設定，落地直接用</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">免換卡免設定，落地直接用</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -2010,7 +2282,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">JR PASS 東日本鐵路周遊券｜贈7天21GB eSIM</h3>
       
-      <p class="card-reason">💡 免換卡免設定，落地直接用</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">免換卡免設定，落地直接用</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -2033,7 +2309,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">JR PASS 關西廣島5日券｜贈7天21GB eSIM</h3>
       
-      <p class="card-reason">💡 免換卡免設定，落地直接用</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">免換卡免設定，落地直接用</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -2056,7 +2336,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【瑞士通行證】含桃園機場接送折扣券$1000</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -2084,7 +2368,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">瑞士半價卡 Swiss Half Fare Card</h3>
       
-      <p class="card-reason">💡 附折扣碼，點複製再去訂更省一波</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">附折扣碼，點複製再去訂更省一波</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -2112,7 +2400,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【罕見85折+贈eSIM】歐洲鐵路全境通行證 Eurail Global Pass</h3>
       
-      <p class="card-reason">💡 現省 15%，高 CP 值精選行程</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">現省 15%，高 CP 值精選行程</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         <span class="orig-price">NT$10,236</span>
         <span class="deal-price">NT$8,680</span>
@@ -2135,7 +2427,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#00C569">🎫 KKday</div>
       <h3 class="card-title">【限7/8出發】樂桃航空東京5天計劃機票｜含托運行李</h3>
       
-      <p class="card-reason">💡 機票特惠，建議搭行程一起訂更省</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">機票特惠，建議搭行程一起訂更省</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$9,000</span>
@@ -2166,7 +2462,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">嘉義二日｜618第二人半價＆免小費｜阿里山風情.歐風佐登妮絲.台中LALAPOR</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$2,800</span>
@@ -2189,7 +2489,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">新北旅遊｜免小費｜福爾摩沙北海岸藝術季.深度人文路線1日</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$999</span>
@@ -2212,7 +2516,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">限量免小費~廣島旅遊｜世界遺產嚴島神社.出雲大社.松江城.岡山後樂園.倉敷美觀地</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$38,999</span>
@@ -2235,7 +2543,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">限量促銷免小費.東北旅遊|秘境五色沼.銀山溫泉街.角館武家屋敷.郭公糰子.山形熊</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$33,999</span>
@@ -2258,7 +2570,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">玩樂369旗艦丹麥挪威12日｜三峽灣、三纜車、勞馬景觀鐵路、兩晚五星｜夏季版．免</h3>
       
-      <p class="card-reason">💡 JR PASS 提前訂更划算，旅日必備</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">JR PASS 提前訂更划算，旅日必備</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$239,900</span>
@@ -2281,7 +2597,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">最高省1萬｜旗艦德瑞10日｜少女峰．楚格峰．新天鵝堡．國王湖遊船．景觀火車．米其</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$143,900</span>
@@ -2304,7 +2624,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">早鳥免小費》南非精選10日│全程四星、雙點進出、開普敦、花園大道、鮑魚農場、動物</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$118,000</span>
@@ -2327,7 +2651,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">賀歲折5000｜荷比法三遊船10日｜羅浮宮．凡爾賽宮．童話羊角村．一晚五星．高速</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$165,900</span>
@@ -2350,7 +2678,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">早鳥免小費》突尼西亞經典11日｜忘憂傑爾巴島、藍白海岸、綠洲探索、撒哈拉浪遊、八</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$102,000</span>
@@ -2373,7 +2705,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">北海道｜早鳥免小費｜阿寒湖LUMINA.薰衣草六合一.十勝千年之森.流冰館.小樽</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$51,900</span>
@@ -2396,7 +2732,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">賀歲折5000│旗艦西班牙聖家堂．阿爾罕布拉宮．鋸齒山．佛朗明哥舞．高速火車．免</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$188,900</span>
@@ -2419,7 +2759,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#E30B14">🦁 雄獅旅遊</div>
       <h3 class="card-title">台中旅遊｜免小費~熱血國際踩舞嘉年華.大口吃肉~森森燒肉.霧峰林家~聽故事.做自</h3>
       
-      <p class="card-reason">💡 台灣最大旅行社，售後服務有保障</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">台灣最大旅行社，售後服務有保障</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$5,399</span>
@@ -2450,7 +2794,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#0066CC">✈️ 易遊網</div>
       <h3 class="card-title">一起去曼谷</h3>
       
-      <p class="card-reason">💡 今日精選特惠，限時價格別錯過</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">今日精選特惠，限時價格別錯過</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -2473,7 +2821,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#0066CC">✈️ 易遊網</div>
       <h3 class="card-title">台北-清邁機票來回自由行</h3>
       
-      <p class="card-reason">💡 機票特惠，建議搭行程一起訂更省</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">機票特惠，建議搭行程一起訂更省</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -2496,7 +2848,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#0066CC">✈️ 易遊網</div>
       <h3 class="card-title">易遊網機加酒</h3>
       
-      <p class="card-reason">💡 機票＋飯店一次搞定，省時省力</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">機票＋飯店一次搞定，省時省力</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -2519,7 +2875,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#0066CC">✈️ 易遊網</div>
       <h3 class="card-title">暢玩首爾</h3>
       
-      <p class="card-reason">💡 今日精選特惠，限時價格別錯過</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">今日精選特惠，限時價格別錯過</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -2542,7 +2902,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#0066CC">✈️ 易遊網</div>
       <h3 class="card-title">香港最好玩</h3>
       
-      <p class="card-reason">💡 今日精選特惠，限時價格別錯過</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">今日精選特惠，限時價格別錯過</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">優惠中</span>
@@ -2565,7 +2929,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#0066CC">✈️ 易遊網</div>
       <h3 class="card-title">台北-東京機加酒</h3>
       
-      <p class="card-reason">💡 機票＋飯店一次搞定，省時省力</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">機票＋飯店一次搞定，省時省力</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$16,581</span>
@@ -2588,7 +2956,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#0066CC">✈️ 易遊網</div>
       <h3 class="card-title">台北-大阪機加酒</h3>
       
-      <p class="card-reason">💡 機票＋飯店一次搞定，省時省力</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">機票＋飯店一次搞定，省時省力</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$14,302</span>
@@ -2611,7 +2983,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#0066CC">✈️ 易遊網</div>
       <h3 class="card-title">台北-沖繩(那霸)機加酒</h3>
       
-      <p class="card-reason">💡 機票＋飯店一次搞定，省時省力</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">機票＋飯店一次搞定，省時省力</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$19,058</span>
@@ -2634,7 +3010,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#0066CC">✈️ 易遊網</div>
       <h3 class="card-title">台北-福岡機加酒</h3>
       
-      <p class="card-reason">💡 機票＋飯店一次搞定，省時省力</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">機票＋飯店一次搞定，省時省力</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$18,095</span>
@@ -2665,7 +3045,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#9B59B6">🏨 易遊網飯店</div>
       <h3 class="card-title">福爾摩沙花園酒店｜2026台南新飯店</h3>
       <p class="card-subtitle">限時85折・暑假$2,550起</p>
-      <p class="card-reason">💡 精選住宿，含早餐或設施超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">精選住宿，含早餐或設施超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$1,800</span>
@@ -2688,7 +3072,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#9B59B6">🏨 易遊網飯店</div>
       <h3 class="card-title">鹿港澄悅酒店｜易遊網獨家</h3>
       <p class="card-subtitle">含早餐＋贈白蘭氏雞精券＆森活館入場券</p>
-      <p class="card-reason">💡 精選住宿，含早餐或設施超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">精選住宿，含早餐或設施超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$3,380</span>
@@ -2711,7 +3099,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#9B59B6">🏨 易遊網飯店</div>
       <h3 class="card-title">日月潭泰湖樓溫泉酒店｜獨家一泊二食</h3>
       <p class="card-subtitle">易遊獨家・含早餐＋晚餐</p>
-      <p class="card-reason">💡 精選住宿，含早餐或設施超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">精選住宿，含早餐或設施超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$5,680</span>
@@ -2734,7 +3126,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#9B59B6">🏨 易遊網飯店</div>
       <h3 class="card-title">台中裕元花園酒店｜暑假贈兒童免費住</h3>
       <p class="card-subtitle">贈1-2位兒童免費住・2大1小含早餐</p>
-      <p class="card-reason">💡 精選住宿，含早餐或設施超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">精選住宿，含早餐或設施超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$5,250</span>
@@ -2757,7 +3153,11 @@ footer strong{color:#8a5830}
       <div class="src-tag" style="background:#9B59B6">🏨 易遊網飯店</div>
       <h3 class="card-title">鹿港永樂酒店｜易遊網一泊二食</h3>
       <p class="card-subtitle">萬豪 Tribute Portfolio・含早餐＋晚餐</p>
-      <p class="card-reason">💡 精選住宿，含早餐或設施超值</p>
+      <div class="card-3row">
+        <div class="c3-item"><span class="c3-icon">📌</span><span class="c3-txt">精選住宿，含早餐或設施超值</span></div>
+        <div class="c3-item"><span class="c3-icon">👤</span><span class="c3-txt">適合 自由行旅客</span></div>
+        <div class="c3-item"><span class="c3-icon">💰</span><span class="c3-txt">點連結確認當日最低價</span></div>
+      </div>
       <div class="card-price">
         
         <span class="deal-price">NT$4,299</span>
