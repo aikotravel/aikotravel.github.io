@@ -454,7 +454,8 @@ footer strong{color:#8a5830}
 .articles-section{max-width:960px;margin:40px auto 0;padding:0 16px}
 .articles-section h2{text-align:center;font-size:18px;font-weight:800;color:#5a2e10;margin-bottom:6px}
 .articles-section .sec-sub{text-align:center;font-size:13px;color:#9a6040;margin-bottom:20px}
-.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.articles-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media(max-width:900px){.articles-grid{grid-template-columns:repeat(2,1fr)}}
 .article-card{background:#fff;border-radius:14px;padding:18px 16px;border:1px solid #f0e0cc;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:transform .15s,box-shadow .15s}
 .article-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(100,50,10,.12);text-decoration:none}
 .article-card-icon{font-size:26px}
@@ -492,14 +493,6 @@ footer strong{color:#8a5830}
   <div class="hero-badge">✨ 每日早上 9:00 自動更新・共 75 筆優惠</div>
   <h1>跟著愛可出發<br><span>旅遊特惠每日精選</span></h1>
   <p class="hero-sub">KKday・雄獅旅遊・易遊網，折扣碼＋買一送一一次看</p>
-  <div class="hero-highlight">
-    <div class="hero-pill">🗼 日本 <strong>88折起</strong></div>
-    <div class="hero-pill">🇰🇷 韓國 <strong>買一送一</strong></div>
-    <div class="hero-pill">✈️ 機票 <strong>最高5折</strong></div>
-    <div class="hero-pill">🏖️ 東南亞 <strong>銅板破盤</strong></div>
-    <div class="hero-pill">🚂 歐洲鐵路 <strong>罕見85折</strong></div>
-  </div>
-  
   <div class="hero-ctas">
     <a class="hero-cta-btn hero-cta-primary" href="#featured-anchor">✨ 看今日精選</a>
     <a class="hero-cta-btn hero-cta-secondary" href="#filter-bar">🔍 快速篩選</a>
@@ -507,37 +500,9 @@ footer strong{color:#8a5830}
   <svg class="hero-wave" viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" fill="#fdf6ee"/></svg>
 </div>
 
-<div class="filter-bar" id="filter-bar">
-  <div class="search-wrap">
-    <input id="deal-search" class="search-input" type="search" placeholder="🔍 搜尋目的地或行程名稱..." autocomplete="off">
-  </div>
-  <div class="filter-inner" id="country-tabs">
-    <div class="filter-tab active" data-country="全部">全部</div>
-    <div class="filter-tab" data-country="日本">🗼 日本</div>
-    <div class="filter-tab" data-country="韓國">🇰🇷 韓國</div>
-    <div class="filter-tab" data-country="東南亞">🏖️ 東南亞</div>
-    <div class="filter-tab" data-country="機票">✈️ 機票</div>
-    <div class="filter-tab" data-country="閃購">🔥 閃購</div>
-    <div class="filter-tab" data-country="台灣">🏡 台灣</div>
-    <div class="filter-tab" data-country="歐洲">🚂 歐洲</div>
-  </div>
-  <div class="tag-wrap" id="tag-pills">
-    <div class="tag-pill" data-tag="親子">👨‍👩‍👧 親子</div>
-    <div class="tag-pill" data-tag="自由行">🎒 自由行</div>
-    <div class="tag-pill" data-tag="eSIM">📶 eSIM</div>
-    <div class="tag-pill" data-tag="JR">🚆 JR PASS</div>
-    <div class="tag-pill" data-tag="迪士尼">🏰 迪士尼</div>
-    <div class="tag-pill" data-tag="環球">🎡 環球影城</div>
-    <div class="tag-pill" data-tag="機票">✈️ 機票</div>
-    <div class="tag-pill" data-tag="住宿">🏨 住宿</div>
-  </div>
-</div>
-
-
-
 <section class="articles-section">
   <h2>旅遊攻略文章</h2>
-  <p class="sec-sub">出發前先做功課，讓每一分旅費花在刀口上</p>
+  <p class="sec-sub">不只看優惠，更要懂怎麼玩！10 篇攻略幫你少踩坑、多省錢<br>從行程規劃、票券比較到訂房技巧，出發前 5 分鐘全搞定 👇</p>
   <div class="articles-grid">
     <a href="/kkday-discount-2026.html" class="article-card">
       <div class="article-card-icon">🏷️</div>
@@ -578,6 +543,16 @@ footer strong{color:#8a5830}
       <div class="article-card-icon">🦁</div>
       <div class="article-card-title">雄獅旅遊評價好嗎？客觀評比＋比較</div>
       <div class="article-card-tag">平台評測</div>
+    </a>
+    <a href="/thailand-bangkok-guide.html" class="article-card">
+      <div class="article-card-icon">🇹🇭</div>
+      <div class="article-card-title">泰國曼谷自由行攻略｜行程＋費用整理</div>
+      <div class="article-card-tag">泰國旅遊</div>
+    </a>
+    <a href="/taiwan-hotel-guide.html" class="article-card">
+      <div class="article-card-icon">🏨</div>
+      <div class="article-card-title">台灣飯店精選攻略｜北中南住宿推薦</div>
+      <div class="article-card-tag">台灣住宿</div>
     </a>
   </div>
 </section>
@@ -621,6 +596,31 @@ footer strong{color:#8a5830}
   <p class="compare-tip">💡 最聰明的做法：用 KKday 買景點票、用易遊網比機票、用雄獅訂套裝，三個平台分工合作</p>
 </section>
 
+<div class="filter-bar" id="filter-bar">
+  <div class="search-wrap">
+    <input id="deal-search" class="search-input" type="search" placeholder="🔍 搜尋目的地或行程名稱..." autocomplete="off">
+  </div>
+  <div class="filter-inner" id="country-tabs">
+    <div class="filter-tab active" data-country="全部">全部</div>
+    <div class="filter-tab" data-country="日本">🗼 日本</div>
+    <div class="filter-tab" data-country="韓國">🇰🇷 韓國</div>
+    <div class="filter-tab" data-country="東南亞">🏖️ 東南亞</div>
+    <div class="filter-tab" data-country="機票">✈️ 機票</div>
+    <div class="filter-tab" data-country="閃購">🔥 閃購</div>
+    <div class="filter-tab" data-country="台灣">🏡 台灣</div>
+    <div class="filter-tab" data-country="歐洲">🚂 歐洲</div>
+  </div>
+  <div class="tag-wrap" id="tag-pills">
+    <div class="tag-pill" data-tag="親子">👨‍👩‍👧 親子</div>
+    <div class="tag-pill" data-tag="自由行">🎒 自由行</div>
+    <div class="tag-pill" data-tag="eSIM">📶 eSIM</div>
+    <div class="tag-pill" data-tag="JR">🚆 JR PASS</div>
+    <div class="tag-pill" data-tag="迪士尼">🏰 迪士尼</div>
+    <div class="tag-pill" data-tag="環球">🎡 環球影城</div>
+    <div class="tag-pill" data-tag="機票">✈️ 機票</div>
+    <div class="tag-pill" data-tag="住宿">🏨 住宿</div>
+  </div>
+</div>
 
 <section class="section featured-section" id="featured-anchor">
   <div class="sec-hdr">
